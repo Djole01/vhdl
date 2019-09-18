@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity toplevel1_2 is
+entity toplevel1_3 is
     Port ( 
            led : out STD_LOGIC_VECTOR (3 downto 0);
            btn : in STD_LOGIC_VECTOR (1 downto 0);
@@ -15,12 +15,13 @@ entity toplevel1_2 is
          );     
          
          
-end toplevel1_2;
+end toplevel1_3;
 
-architecture behv1 of toplevel1_2 is
+architecture behv1 of toplevel1_3 is
 -- group of RGB led signals
     signal RGB_Led_4: std_logic_vector(0 to 2); -- order R, G, B ,
     signal RGB_Led_5: std_logic_vector(0 to 2); -- order R, G, B ,
+    signal SMALL_LED_GROUP: std_logic_vector (0 to 3); --order led3,led2,led1,led0
     
 
 begin
@@ -37,6 +38,9 @@ begin
       led5_r <= RGB_Led_5(2);
       led5_g <= RGB_Led_5(1);
       led5_b <= RGB_Led_5(0);
+      
+  -- map signal "SMALL_LED_GROUP" to the actual output ports of small led's.
+     led <= SMALL_LED_GROUP;
    
    
    -- taking input from buttons, and changng rgb led based on it
@@ -66,7 +70,7 @@ begin
                        
 -- Control of small led's
        with btn(1 downto 0) select
-      led(3 downto 0) <= "1000" when "11",
+      SMALL_LED_GROUP <= "1000" when "11",
                          "0100" when "10",
                          "0010" when "01",
                          "0001" when others;
@@ -83,17 +87,4 @@ begin
   -- signal_name <= expression_1 when condition_1 else expression_2;
   -- X <= A when (sw = '1') else B;
   
-  
-  
-  
- 
-
-     
-        
-
-
-
-
-
-           
   

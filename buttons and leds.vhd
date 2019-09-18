@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity toplevel is
+entity toplevel1_1 is
     Port ( 
            led : out STD_LOGIC_VECTOR (3 downto 0);
            btn : in STD_LOGIC_VECTOR (1 downto 0);
@@ -9,13 +9,11 @@ entity toplevel is
            led4_g : out std_logic;
            led4_b : out std_logic
          );     
-end toplevel;
+end toplevel1_1;
 
-architecture behv1 of toplevel is
+architecture behv1 of toplevel1_1 is
 -- group of RGB led signals
     signal RGB_Led_4: std_logic_vector(0 to 2); -- order R, G, B ,
-
-    -- turn on small led's, by pressing buttons. 
     
 
 begin
@@ -37,19 +35,11 @@ begin
                        "000" when others; --off
                        
 -- Control of small led's
-       with btn(1 downto 0) select
-       led(3 downto 3) <= "1" when "11",  --on 
-             "0" when others; -- off
-        with btn(1 downto 0) select
-        led(2 downto 2) <= "1" when "10",  --on 
-                         "0" when others; -- off
-        with btn(1 downto 0) select
-        led(1 downto 1) <= "1" when "01",  --on 
-        "0" when others; -- off
-        
-         with btn(1 downto 0) select
-              led(0 downto 0) <= "1" when "00",  --on 
-                    "0" when others; -- off
+      with btn(1 downto 0) select
+      led(3 downto 0) <= "1000" when "11",
+                         "0100" when "10",
+                         "0010" when "01",
+                         "0001" when others;
   end behv1;
   
 
