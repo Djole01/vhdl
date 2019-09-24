@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Sep 24 13:41:50 2019
+# Process ID: 16385
+# Current directory: /home/sdfe/Documents/school work/VHDL/vhdlProjectsForGit/lab 1/project_2introTest.runs/impl_1
+# Command line: vivado -log toplevel1_3.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source toplevel1_3.tcl -notrace
+# Log file: /home/sdfe/Documents/school work/VHDL/vhdlProjectsForGit/lab 1/project_2introTest.runs/impl_1/toplevel1_3.vdi
+# Journal file: /home/sdfe/Documents/school work/VHDL/vhdlProjectsForGit/lab 1/project_2introTest.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source toplevel1_3.tcl -notrace
